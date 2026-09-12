@@ -1,18 +1,130 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="مركز السيارة — متجر عراقي عصري لقطع غيار السيارات والإكسسوارات والأدوات ومستلزمات الصيانة."><meta name="robots" content="index,follow"><meta name="theme-color" content="#0b1220"><link rel="manifest" href="manifest.webmanifest"><title>مركز السيارة | قطع غيار السيارات في العراق</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="مركز السيارة — متجر عراقي عصري لقطع غيار السيارات والإكسسوارات والأدوات ومستلزمات الصيانة.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="manifest" href="manifest.webmanifest">
+  <title>مركز السيارة | قطع غيار السيارات في العراق</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-<div class="topbar"><div class="container topbar-inner"><span>توصيل داخل جميع المحافظات</span><span>الدفع عند الاستلام متاح</span><span>دعم العملاء 0770 000 0000</span></div></div>
-<header class="header"><div class="container header-inner"><button class="menu-button" id="mobileMenu" aria-label="فتح القائمة">☰</button><a class="brand" href="#home"><span class="brand-badge">M</span><span><strong>مركز السيارة</strong><small>Automotive Store</small></span></a><nav class="main-nav" id="categories"><a href="#home">الرئيسية</a><a href="#shop" data-cat="قطع غيار">قطع الغيار</a><a href="#shop" data-cat="زيوت">الزيوت والفلاتر</a><a href="#shop" data-cat="كهربائيات">الكهربائيات</a><a href="#shop" data-cat="إكسسوارات">الإكسسوارات</a><a href="#shop" data-cat="أدوات">الأدوات</a></nav><div class="header-actions"><button class="header-btn" id="accountBtn">حسابي</button><button class="cart-button" id="cartBtn">السلة <b id="cartCount">0</b></button></div></div></header>
-<main id="home">
-<section class="hero"><div class="container hero-grid"><div class="hero-copy"><span class="eyebrow">IRAQ AUTOMOTIVE · 2026</span><h1>قطع سيارتك.<br><em>اختيار أذكى.</em></h1><p>متجر عراقي مرتب لقطع الغيار والزيوت والإكسسوارات والأدوات — ابحث، تأكد من التوافق، أضف للسلة، واستلم طلبك.</p><div class="hero-search"><span>⌕</span><input id="searchInput" placeholder="ابحث عن قطعة أو ماركة..." autocomplete="off"><button id="searchBtn">بحث</button></div><div class="hero-actions"><a class="btn btn-primary" href="#shop">ابدأ التسوق</a><button class="btn btn-light" id="fitmentBtn">اختار حسب سيارتك</button></div><div class="hero-metrics"><div><strong class="latin">18</strong><span>محافظة</span></div><div><strong class="latin">4.9</strong><span>تقييم</span></div><div><strong class="latin">24/7</strong><span>طلبات أونلاين</span></div></div></div><div class="hero-visual"><img src="https://images.unsplash.com/photo-1487754180451-c456f719a1b8?auto=format&fit=crop&w=1000&q=85" alt="ورشة سيارات" loading="eager"><div class="visual-card card-one"><b>اختيار أسهل</b><span>حسب ماركة سيارتك</span></div><div class="visual-card card-two"><b>أسعار واضحة</b><span>بالدينار العراقي</span></div></div></div></section>
-<section class="category-strip"><div class="container category-grid"><button data-cat="قطع غيار"><span>01</span><b>قطع غيار</b><small>فرامل · محرك · تعليق</small></button><button data-cat="زيوت"><span>02</span><b>زيوت وفلاتر</b><small>محرك · تبريد · فرامل</small></button><button data-cat="كهربائيات"><span>03</span><b>كهربائيات</b><small>إنارة · شحن · حساسات</small></button><button data-cat="إكسسوارات"><span>04</span><b>إكسسوارات</b><small>داخلية · خارجية</small></button><button data-cat="أدوات"><span>05</span><b>أدوات</b><small>فحص · نفخ · صيانة</small></button></div></section>
-<section class="section container" id="shop"><div class="section-head"><div><span class="eyebrow eyebrow-dark">SHOP</span><h2>منتجات مختارة</h2><p>صور حقيقية، أسعار واضحة، ومعلومات تساعدك تختار الصح.</p></div><div class="sort-box"><label for="sortSelect">ترتيب</label><select id="sortSelect"><option value="featured">الأكثر شعبية</option><option value="low">السعر الأقل</option><option value="high">السعر الأعلى</option><option value="rating">الأعلى تقييماً</option></select></div></div><div id="productGrid" class="product-grid"></div></section>
-<section class="container finder"><div><span class="eyebrow">FITMENT</span><h2>مو متأكد شنو يناسب سيارتك؟</h2><p>حدد الماركة، الموديل والسنة وخلي المتجر يساعدك تضيق النتائج.</p></div><button class="btn btn-primary" id="finderBtn">ساعدني أختار</button></section>
-<section class="section container"><div class="trust-grid"><article><span>01</span><b>صور حقيقية</b><small>عرض واضح للمنتج بدل الرموز والصور الوهمية.</small></article><article><span>02</span><b>شحن داخل العراق</b><small>حساب أجور الشحن حسب المحافظة عند الطلب.</small></article><article><span>03</span><b>دفع عند الاستلام</b><small>خيار مناسب للشراء المحلي.</small></article><article><span>04</span><b>متابعة الطلب</b><small>رقم طلب وحالة واضحة من البداية للنهاية.</small></article></div></section>
-</main>
-<div class="overlay" id="overlay"></div><aside class="cart-drawer" id="cartDrawer"><div class="drawer-head"><div><span class="eyebrow eyebrow-dark">YOUR CART</span><h3>سلة الشراء</h3></div><button id="closeCart" aria-label="إغلاق">×</button></div><div id="cartItems" class="cart-items"></div><div class="cart-foot"><div><span>المجموع</span><strong id="cartTotal">0 د.ع</strong></div><button class="btn btn-primary full" id="checkoutBtn">إتمام الطلب</button><small>الشحن يظهر عند اختيار المحافظة.</small></div></aside>
-<div class="modal" id="modal"><div class="modal-box" id="modalContent"></div></div>
-<footer><div class="container footer-grid"><div><div class="brand footer-brand"><span class="brand-badge">M</span><span><strong>مركز السيارة</strong><small>Automotive Store</small></span></div><p>منصة عراقية عصرية لقطع غيار السيارات ومستلزمات الصيانة.</p></div><div><h4>المتجر</h4><a href="#shop" data-cat="قطع غيار">قطع الغيار</a><a href="#shop" data-cat="زيوت">الزيوت</a><a href="#shop" data-cat="كهربائيات">الكهربائيات</a></div><div><h4>الخدمة</h4><a href="#" id="trackOrderLink">تتبع الطلب</a><a href="#" id="returnsLink">الاستبدال والاسترجاع</a><a href="#" id="contactLink">تواصل معنا</a></div><div><h4>حسابك</h4><a href="#" id="footerAccount">حسابي</a><a href="#" id="ordersLink">طلباتي</a><a href="#" id="favoritesLink">المفضلة</a></div></div><div class="footer-bottom">© 2026 مركز السيارة — English numerals / Modern UI</div></footer>
-<script src="config.js"></script><script src="app.js"></script>
-</body></html>
+  <div class="page-loader" id="pageLoader"><div class="loader-ring"></div><span>مركز السيارة</span></div>
+  <div class="topbar"><div class="container topbar-inner"><span>توصيل داخل جميع المحافظات</span><span>الدفع عند الاستلام متاح</span><span>دعم العملاء 0770 000 0000</span></div></div>
+
+  <header class="header" id="siteHeader">
+    <div class="container header-inner">
+      <button class="menu-button" id="mobileMenu" aria-label="فتح القائمة"><span></span><span></span><span></span></button>
+      <a class="brand" href="#home" aria-label="مركز السيارة">
+        <span class="brand-badge">M</span>
+        <span><strong>مركز السيارة</strong><small>Automotive Store</small></span>
+      </a>
+      <nav class="main-nav" id="categories">
+        <a href="#home">الرئيسية</a>
+        <a href="#shop" data-cat="قطع غيار">قطع الغيار</a>
+        <a href="#shop" data-cat="زيوت">الزيوت والفلاتر</a>
+        <a href="#shop" data-cat="كهربائيات">الكهربائيات</a>
+        <a href="#shop" data-cat="إكسسوارات">الإكسسوارات</a>
+        <a href="#shop" data-cat="أدوات">الأدوات</a>
+      </nav>
+      <div class="header-actions">
+        <button class="header-btn icon-action" id="accountBtn"><span>◯</span><b>حسابي</b></button>
+        <button class="header-btn icon-action" id="favoritesHeader"><span>♡</span><b>المفضلة</b></button>
+        <button class="cart-button" id="cartBtn"><span class="cart-symbol">🛒</span><b id="cartLabel">السلة</b><em id="cartCount">0</em></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-glow hero-glow-a"></div><div class="hero-glow hero-glow-b"></div>
+      <div class="container hero-grid reveal">
+        <div class="hero-copy">
+          <span class="eyebrow">IRAQ AUTOMOTIVE · 2026</span>
+          <h1>كل شيء لسيارتك.<br><em>بمكان واحد.</em></h1>
+          <p>قطع غيار، زيوت، إكسسوارات وأدوات صيانة مع بحث سريع، فلترة ذكية، سلة سلسة وتجربة شراء مصممة للعراق.</p>
+          <div class="hero-search" id="heroSearchBox"><span>⌕</span><input id="searchInput" placeholder="ابحث عن قطعة، ماركة أو كلمة..." autocomplete="off"><button id="searchBtn">بحث</button></div>
+          <div class="search-suggestions" id="searchSuggestions"></div>
+          <div class="hero-actions"><a class="btn btn-primary" href="#shop">ابدأ التسوق <span>←</span></a><button class="btn btn-light" id="fitmentBtn">اختار حسب سيارتك</button></div>
+          <div class="hero-metrics"><div><strong class="latin" data-counter="24">0</strong><span>منتج متوفر</span></div><div><strong class="latin" data-counter="18">0</strong><span>محافظة</span></div><div><strong class="latin" data-counter="4.9">0</strong><span>تقييم المتجر</span></div></div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-photo-main"><img src="https://images.unsplash.com/photo-1487754180451-c456f719a1b8?auto=format&fit=crop&w=1200&q=88" alt="ورشة سيارات" fetchpriority="high"></div>
+          <div class="visual-card card-one"><span class="visual-icon">✓</span><div><b>اختيار أسرع</b><small>حسب السيارة والفئة</small></div></div>
+          <div class="visual-card card-two"><span class="visual-icon">د.ع</span><div><b>أسعار واضحة</b><small>بالدينار العراقي</small></div></div>
+          <div class="floating-chip"><span></span> متاح الآن</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="category-strip">
+      <div class="container category-grid">
+        <button class="category-card" data-cat="قطع غيار"><span>01</span><b>قطع غيار</b><small>فرامل · محرك · تعليق</small><i>→</i></button>
+        <button class="category-card" data-cat="زيوت"><span>02</span><b>زيوت وفلاتر</b><small>محرك · تبريد · فرامل</small><i>→</i></button>
+        <button class="category-card" data-cat="كهربائيات"><span>03</span><b>كهربائيات</b><small>إنارة · شحن · حساسات</small><i>→</i></button>
+        <button class="category-card" data-cat="إكسسوارات"><span>04</span><b>إكسسوارات</b><small>داخلية · خارجية</small><i>→</i></button>
+        <button class="category-card" data-cat="أدوات"><span>05</span><b>أدوات</b><small>فحص · نفخ · صيانة</small><i>→</i></button>
+      </div>
+    </section>
+
+    <section class="promo-strip"><div class="container promo-inner"><span>⚡ عروض هذا الأسبوع</span><b>خصم يصل إلى 20% على منتجات مختارة</b><button id="promoShop">تسوق الآن</button></div></section>
+
+    <section class="section container" id="shop">
+      <div class="section-head reveal">
+        <div><span class="eyebrow eyebrow-dark">SHOP</span><h2>كتالوج كبير. اختيار أسهل.</h2><p id="resultsText">منتجات متاحة حالياً للطلب</p></div>
+        <div class="shop-controls"><div class="sort-box"><label for="sortSelect">ترتيب</label><select id="sortSelect"><option value="featured">الأكثر شعبية</option><option value="newest">الأحدث</option><option value="low">السعر الأقل</option><option value="high">السعر الأعلى</option><option value="rating">الأعلى تقييماً</option></select></div><button class="filter-toggle" id="filterToggle">☷ فلترة</button></div>
+      </div>
+      <div class="shop-layout">
+        <aside class="filter-panel" id="filterPanel">
+          <div class="filter-head"><b>تصفية المنتجات</b><button id="resetFilters">مسح</button></div>
+          <label>الفئة</label><div id="filterCategories" class="filter-options"></div>
+          <label>السعر</label><div class="price-range"><input id="minPrice" type="number" placeholder="من"><span>—</span><input id="maxPrice" type="number" placeholder="إلى"></div>
+          <label>التقييم</label><div class="rating-filters" id="ratingFilters"><button data-rating="4">4+ ★</button><button data-rating="4.5">4.5+ ★</button><button data-rating="4.8">4.8+ ★</button></div>
+          <button class="btn btn-primary full" id="applyFilters">تطبيق الفلاتر</button>
+        </aside>
+        <div class="products-wrap"><div id="activeFilters" class="active-filters"></div><div id="productGrid" class="product-grid"></div><div id="loadMoreWrap" class="load-more-wrap"><button class="btn load-more" id="loadMore">عرض المزيد</button><span id="productCountLabel"></span></div></div>
+      </div>
+    </section>
+
+    <section class="container quick-tools reveal">
+      <button id="finderBtn"><span>🚗</span><div><b>ابحث حسب سيارتك</b><small>ماركة · موديل · سنة</small></div><i>←</i></button>
+      <button id="trackOrderLink"><span>⌖</span><div><b>تتبع طلبك</b><small>برقم الطلب</small></div><i>←</i></button>
+      <button id="returnsLink"><span>↻</span><div><b>الاستبدال والاسترجاع</b><small>سياسة واضحة</small></div><i>←</i></button>
+      <button id="contactLink"><span>☎</span><div><b>تواصل معنا</b><small>دعم العملاء</small></div><i>←</i></button>
+    </section>
+
+    <section class="section container reveal" id="popularSection">
+      <div class="section-head"><div><span class="eyebrow eyebrow-dark">WHY US</span><h2>تجربة شراء بدون تعقيد</h2></div></div>
+      <div class="trust-grid"><article><span>01</span><b>صور واضحة</b><small>كل بطاقة منتج تعرض الصورة والسعر والمخزون بوضوح.</small></article><article><span>02</span><b>توافق السيارة</b><small>مساعد اختيار يضيق النتائج حسب ماركتك وموديلك.</small></article><article><span>03</span><b>شحن العراق</b><small>أجور الشحن تحسب تلقائياً بعد اختيار المحافظة.</small></article><article><span>04</span><b>شراء سريع</b><small>سلة ديناميكية وطلب بسيط بدون خطوات زائدة.</small></article></div>
+    </section>
+  </main>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="سلة المشتريات">
+    <div class="drawer-head"><div><span class="eyebrow eyebrow-dark">YOUR CART</span><h3>سلة الشراء</h3><small id="cartSubtext">0 منتجات</small></div><button id="closeCart" aria-label="إغلاق">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-foot"><div><span>المجموع</span><strong id="cartTotal">0 د.ع</strong></div><button class="btn btn-primary full" id="checkoutBtn">إتمام الطلب <span>←</span></button><small>الشحن يظهر عند اختيار المحافظة.</small></div>
+  </aside>
+
+  <div class="modal" id="modal"><div class="modal-box" id="modalContent"></div></div>
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+  <div class="quick-view-dock" id="quickViewDock"></div>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><div class="brand footer-brand"><span class="brand-badge">M</span><span><strong>مركز السيارة</strong><small>Automotive Store</small></span></div><p>منصة عراقية عصرية لقطع غيار السيارات ومستلزمات الصيانة.</p></div>
+      <div><h4>المتجر</h4><a href="#shop" data-cat="قطع غيار">قطع الغيار</a><a href="#shop" data-cat="زيوت">الزيوت</a><a href="#shop" data-cat="كهربائيات">الكهربائيات</a><a href="#shop" data-cat="إكسسوارات">الإكسسوارات</a></div>
+      <div><h4>الخدمة</h4><a href="#" id="footerTrack">تتبع الطلب</a><a href="#" id="footerReturns">الاستبدال والاسترجاع</a><a href="#" id="footerContact">تواصل معنا</a></div>
+      <div><h4>حسابك</h4><a href="#" id="footerAccount">حسابي</a><a href="#" id="ordersLink">طلباتي</a><a href="#" id="favoritesLink">المفضلة</a></div>
+    </div>
+    <div class="footer-bottom">© 2026 مركز السيارة — Iraqi Automotive Store</div>
+  </footer>
+
+  <script src="config.js"></script><script src="app.js"></script>
+</body>
+</html>
