@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="مركز السيارة - متجر عراقي متكامل لقطع غيار السيارات والإكسسوارات والأدوات." />
+  <meta name="description" content="مركز السيارة — متجر عراقي لقطع غيار السيارات، الزيوت، الإكسسوارات، كهربائيات وأدوات الصيانة مع شحن داخل العراق." />
+  <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#0b1220" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="canonical" href="/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="مركز السيارة | قطع غيار وإكسسوارات السيارات" />
+  <meta property="og:description" content="تسوّق قطع غيار وزيوت وإكسسوارات وأدوات صيانة السيارات داخل العراق." />
   <title>مركز السيارة | قطع غيار وإكسسوارات السيارات</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,9 +20,9 @@
 <body>
   <div class="topbar"><div class="container topbar-inner"><span>🚚 توصيل داخل بغداد والمحافظات</span><span>الدفع عند الاستلام متاح</span><span>☎️ دعم العملاء: 0770 000 0000</span></div></div>
   <header class="header"><div class="container nav">
-    <button class="mobile-menu" id="mobileMenu">☰</button>
-    <a class="brand" href="#home"><span class="brand-mark">🚗</span><span><b>مركز السيارة</b><small>كل ما تحتاجه لسيارتك</small></span></a>
-    <div class="search"><input id="searchInput" placeholder="ابحث عن قطعة، زيت، إكسسوار..." autocomplete="off"><button id="searchBtn">بحث</button></div>
+    <button class="mobile-menu" id="mobileMenu" aria-label="القائمة">☰</button>
+    <a class="brand" href="#home" aria-label="مركز السيارة"><span class="brand-mark">🚗</span><span><b>مركز السيارة</b><small>كل ما تحتاجه لسيارتك</small></span></a>
+    <div class="search"><input id="searchInput" aria-label="بحث" placeholder="ابحث عن قطعة، زيت، إكسسوار..." autocomplete="off"><button id="searchBtn">بحث</button></div>
     <div class="actions"><button class="icon-btn" id="accountBtn">👤<span>حسابي</span></button><button class="cart-btn" id="cartBtn">🛒<span>السلة</span><b id="cartCount">0</b></button></div>
   </div></header>
   <nav class="categories" id="categories"><div class="container category-inner">
@@ -32,14 +38,16 @@
 
     <section class="container section products-section"><div class="section-head"><div><span class="eyebrow">الأكثر طلباً</span><h2>منتجات مختارة</h2></div><div class="filters"><select id="sortSelect"><option value="featured">الأكثر شعبية</option><option value="low">السعر: من الأقل</option><option value="high">السعر: من الأعلى</option><option value="rating">الأعلى تقييماً</option></select></div></div><div id="productGrid" class="product-grid"></div></section>
 
-    <section class="promo container" id="offers"><div><span>🔥 عرض الأسبوع</span><h2>خصم يصل إلى 25% على مستلزمات الصيانة</h2><p>العروض محدودة الكمية — لا تفوّت السعر.</p></div><button class="primary" onclick="filterCategory('زيوت')">شوف العروض</button></section>
+    <section class="promo container" id="offers"><div><span>🔥 عرض الأسبوع</span><h2>خصم يصل إلى 25% على مستلزمات الصيانة</h2><p>العروض محدودة الكمية — لا تفوّت السعر.</p></div><button class="primary" id="offersBtn">شوف العروض</button></section>
     <section class="container section"><div class="features"><div>🚚<b>توصيل سريع</b><span>لجميع المحافظات</span></div><div>💳<b>طرق دفع مرنة</b><span>الدفع عند الاستلام</span></div><div>🛡️<b>ضمان واستبدال</b><span>خدمة ما بعد البيع</span></div><div>💬<b>دعم حقيقي</b><span>نساعدك تختار الصح</span></div></div></section>
   </main>
 
-  <div class="drawer-overlay" id="overlay"></div><aside class="cart-drawer" id="cartDrawer"><div class="drawer-head"><h3>سلة الشراء</h3><button id="closeCart">×</button></div><div id="cartItems" class="cart-items"></div><div class="cart-foot"><div><span>المجموع</span><strong id="cartTotal">0 د.ع</strong></div><button class="primary full" id="checkoutBtn">إتمام الطلب</button><small>الشحن يحسب حسب المحافظة عند تأكيد الطلب.</small></div></aside>
+  <div class="drawer-overlay" id="overlay"></div><aside class="cart-drawer" id="cartDrawer" aria-label="سلة الشراء"><div class="drawer-head"><h3>سلة الشراء</h3><button id="closeCart">×</button></div><div id="cartItems" class="cart-items"></div><div class="cart-foot"><div><span>المجموع</span><strong id="cartTotal">0 د.ع</strong></div><div id="shippingPreview" class="shipping-preview"></div><button class="primary full" id="checkoutBtn">إتمام الطلب</button><small>الشحن يحسب حسب المحافظة عند تأكيد الطلب.</small></div></aside>
 
   <div class="modal" id="modal"><div class="modal-box" id="modalContent"></div></div>
-  <footer><div class="container footer-grid"><div><div class="brand footer-brand"><span class="brand-mark">🚗</span><span><b>مركز السيارة</b><small>كل ما تحتاجه لسيارتك</small></span></div><p>منصة عراقية لبيع قطع غيار السيارات والإكسسوارات ومستلزمات الصيانة.</p></div><div><h4>المتجر</h4><a href="#shop">قطع الغيار</a><a href="#shop">الزيوت والفلاتر</a><a href="#shop">الإكسسوارات</a></div><div><h4>خدمة العملاء</h4><a href="#">تتبع الطلب</a><a href="#">الاستبدال والاسترجاع</a><a href="#">تواصل معنا</a></div><div><h4>حسابك</h4><a href="#" id="footerAccount">تسجيل الدخول</a><a href="#">طلباتي</a><a href="#">المفضلة</a></div></div><div class="copyright">© 2026 مركز السيارة — جميع الحقوق محفوظة</div></footer>
+  <footer><div class="container footer-grid"><div><div class="brand footer-brand"><span class="brand-mark">🚗</span><span><b>مركز السيارة</b><small>كل ما تحتاجه لسيارتك</small></span></div><p>منصة عراقية لبيع قطع غيار السيارات والإكسسوارات ومستلزمات الصيانة.</p></div><div><h4>المتجر</h4><a href="#shop" data-cat="قطع غيار">قطع الغيار</a><a href="#shop" data-cat="زيوت">الزيوت والفلاتر</a><a href="#shop" data-cat="إكسسوارات">الإكسسوارات</a></div><div><h4>خدمة العملاء</h4><a href="#" id="trackOrderLink">تتبع الطلب</a><a href="#" id="returnsLink">الاستبدال والاسترجاع</a><a href="#" id="contactLink">تواصل معنا</a></div><div><h4>حسابك</h4><a href="#" id="footerAccount">تسجيل الدخول</a><a href="#" id="ordersLink">طلباتي</a><a href="#" id="favoritesLink">المفضلة</a></div></div><div class="copyright">© 2026 مركز السيارة — جميع الحقوق محفوظة</div></footer>
+  <script src="config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="app.js"></script>
 </body>
 </html>
