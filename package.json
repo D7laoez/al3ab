@@ -1,0 +1,12 @@
+{
+  "name": "markaz-al-sayara",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Arabic RTL automotive e-commerce platform",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "check": "node --check app.js && node --check admin.js",
+    "serve": "npx serve ."
+  },
+  "engines": { "node": ">=20" }
+}
