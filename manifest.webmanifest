@@ -1,0 +1,12 @@
+{
+  "name": "مركز السيارة",
+  "short_name": "مركز السيارة",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f8fb",
+  "theme_color": "#0b1220",
+  "description": "متجر عراقي لقطع غيار السيارات والإكسسوارات والأدوات.",
+  "icons": []
+}
